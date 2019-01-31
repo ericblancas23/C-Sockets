@@ -20,6 +20,16 @@ int main() {
 	if (connection_status == -l) {
 		printf("there was an error");
 	}
+
+	//recieve data from the server
+	char server_response[256];
+	recv(network_socket, &server_response sizeof(server_response), 0);
+	
+	//print out the servers response 
+	printf("the server sent the data: %s\n", server_response);
+
+	//close
+	close(network_socket);
 	return 0;
 }
 

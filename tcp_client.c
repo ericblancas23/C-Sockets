@@ -15,7 +15,11 @@ int main() {
 	server_address.sin_port = htons(9002);
 	server_address.sin_addr.s_addr = INADDR_ANY;
 	
-	connect()
+	int connection_status = connect(network_socket,(struct sockaddr *) &server_address, sizeof(server_address));
+	// check for error with the connection
+	if (connection_status == -l) {
+		printf("there was an error");
+	}
 	return 0;
 }
 
